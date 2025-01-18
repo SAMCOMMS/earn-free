@@ -201,24 +201,45 @@ header{
  }
  .dropdown{
      display: flex;
-     margin-top: -300px;
- }
- #x{
-     color: red;
-     padding-left: 100px;
+     margin-top: 300px;
  }
  #check{
      display: none;
  }
+ .hero{
+    height: 300px;
+    padding-top: 40px;
+    line-height: 40px;
+ }
+ .hero .h1{
+    text-align: center;
+ }
+ .hero p{
+    font-size: 20px;
+    padding-top: 0px;
+ }
+ .hero .btn-demo{
+    height: 30px;
+    border-radius: 10%;
+    border: none;
+    width: 100px;
+    margin-top: 30px;
+ }
  #check:checked ~ .dropdown #nav2{
-     width: 225px;
-     padding-left: 20px;
+     
+     padding-left: 30px;
      padding-top: 10px;
      background-color: black;
      transition: 2s ease-in-out;
      color: white;
      margin-top: 300px;
-     margin-left: -360px;
+     margin-left: -300px;
+ }
+ #check:checked ~ .dropdown{
+    
+    background-color: black;
+    transition: 2s ease-in-out;
+    color: white;   
  }
 }
 @media (max-width: 1120px) {
