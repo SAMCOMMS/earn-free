@@ -1,76 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Features</title>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-    </style>
-</head>
-<header>
-    <section id="section1">
-        <h1>
-            MARKET MASTERS
-        
-            <span class="global">
-                PIPS PATHWAY
-            </span>
-        </h1>
-      
-        <marquee behavior="smooth" direction="">
-            <h4>
-                TRADE WITH CONFIDENCE
-            </h4></marquee>
-    </section>
-  
-    <section id="call-us"> <a href="https://wa.me/+234907283969"><button id="call-us-button">Contact us</button></a> </section>
-    <label for="check"><i class='bx bx-menu' id="menu"></i></label>
-    <input type="checkbox" name="" id="check">
-   <div class="dropdown">
-    <section id="nav2">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="charts.html">Charts</a></li>
-        <li><a href="https://wa.me/+234907283969">Advantages</a></li>
-        <li><a href="https://wa.me/+234907283969">Contact us</a></li>
-        </section>
-   </div>
-</header>
-<nav>
-    <ul><a href="index.html">HOME</a></ul>
-    <ul><a href="charts.html">CHARTS</a></ul>
-    <ul><a href="https://wa.me/+234907283969">OUR ADVANTAGE</a></ul>
-    <ul><a href="https://wa.me/+234907283969">CONTACT US</a></ul>
-</nav>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Market Masters Pips Pathway</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+          body {
+              font-family: 'Poppins', sans-serif;
+              background: #f4f4f4;
+              color: #333;
+          }
+          header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 20px 40px;
+              background: linear-gradient(90deg, #004aad, #00bcd4);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+          .logo {
+              font-size: 30px;
+              font-weight: bold;
+              color: #fff;
+          }
+          nav ul {
+              list-style: none;
+              display: flex;
+              gap: 25px;
+          }
+          nav a {
+              color: #fff;
+              font-size: 18px;
+              text-decoration: none;
+              padding: 12px 20px;
+              border-radius: 6px;
+              transition: background-color 0.4s;
+          }
+          nav a:hover {
+              background-color: rgba(255, 255, 255, 0.3);
+          }
 
-</header>
-<body>
-    <section class="hero">
-        <h1>Your Gateway to Bigger Profits</h1>
-        <p>Full access to platform & tools</p>
-       <p>Real-time streaming quotes</p>
-        <a href="https://wa.me/+234907283969"><button class="btn-demo">GET STARTED</button></a>
-    </section>
-    
-    <article>
-        Industry-Leading Online Forex Trading
-</article>
-</body>
-<footer>
-    <div class="c-o">
-        <div class="feature">
-            <div class="circle" id="c1"><i class='bx bx-lock-alt'></i></div>
-            <h2>Confidence</h2>
-        </div>
-        <div class="feature">
-            <div class="circle" id="c2"><i class='bx bxs-cog'></i></div>
-            <h2>Advantage</h2>
-        </div>
-        <div class="feature">
-            <div class="circle"><i class='bx bxs-book-add'></i></div>
-            <h2>Knowledge</h2>
-        </div>
-    </div>
-</footer>
-</html>
+          .menu-toggle {
+              display: none;
+          }
+
+          .menu-label {
+              display: none;
+              font-size: 28px;
+              color: #fff;
+              cursor: pointer;
+          }
+
+          .menu-toggle:checked + .menu-label + nav ul {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+          }
+
+          .hero {
+              text-align: center;
+              padding: 100px 20px;
+              background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.8)), url('https://source.unsplash.com/1600x600/?forex,finance') no-repeat center/cover;
+              color: #fff;
+          }
+          .hero h1 {
+              font-size: 4em;
+              font-weight: 700;
+              margin-bottom: 15px;
+              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+          }
+          .hero p {
+              font-size: 1.5em;
+              margin-bottom: 30px;
+          }
+          .hero a {
+              padding: 14px 30px;
+              background-color: #ff9800;
+              color: #fff;
+              text-decoration: none;
+              font-size: 1.2em;
+              font-weight: bold;
+              border-radius: 8px;
+              transition: background-color 0.3s;
+          }
+          .hero a:hover {
+              background-color: #e65100;
+          }
+          .features {
+              display: flex;
+              justify-content: space-around;
+              flex-wrap: wrap;
+              padding: 50px 20px;
+              background: #fafafa;
+          }
+          .feature {
+              flex: 1;
+              min-width: 300px;
+              margin: 15px;
+              padding: 20px;
+              background: #fff;
+              border-radius: 10px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              transition: transform 0.3s, box-shadow 0.3s;
+          }
+          .feature:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+          }
+          .feature h2 {
+              font-size: 1.8em;
+              margin-bottom: 15px;
+              color: #004aad;
+          }
+          .circle {
+              width: 100px;
+              height: 100px;
+              margin: 0 auto 20px;
+              border-radius: 50%;
+              background: linear-gradient(145deg, #e0e0e0, #c6c6c6);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 2.5em;
+              color: #00796b;
+              box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+          }
+          footer {
+              text-align: center;
+              padding: 20px;
+              background: #004aad;
+              color: #fff;
+          }
+
+          /* Responsive Design */
+          @media (max-width: 768px) {
+              .menu-label {
+                  display: block;
+              }
+              nav ul {
+                  display: none;
+                  flex-direction: column;
+                  gap: 10px;
+              }
+              .hero h1 {
+                  font-size: 2.5em;
+              }
+              .hero p {
+                  font-size: 1.2em;
+              }
+              .features {
+                  flex-direction: column;
+                  padding: 20px;
+              }
+              .feature {
+                  margin: 10px 0;
+              }
+          }
+
+          @media (max-width: 480px) {
+              header {
+                  padding: 15px 20px;
+              }
+              .logo {
+                  font-size: 24px;
+              }
+              .hero {
+                  padding: 60px 10px;
+              }
+              .hero h1 {
+                  font-size: 2em;
+              }
+              .hero a {
+                  font-size: 1em;
+                  padding: 10px 20px;
+              }
+              .circle {
+                  width: 80px;
+                  height: 80px;
+                  font-size: 2em;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <header>
+          <div class="logo">Market Masters Pips Pathway</div>
+          <input type="checkbox" id="menu-toggle" class="menu-toggle">
+          <label for="menu-toggle" class="menu-label">☰</label>
+          <nav>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Signals</a></li>
+                  <li><a href="#">Charts</a></li>
+                  <li><a href="#">Our Advantage</a></li>
+                  <li><a href="#">Contact Us</a></li>
+              </ul>
+          </nav>
+      </header>
+
+      <section class="hero">
+          <h1>Your Gateway to Bigger Profits</h1>
+          <p>Real-time forex trading signals, market insights, and top-notch tools.</p>
+          <a href="#">Get Started</a>
+      </section>
+
+      <section class="features">
+          <div class="feature">
+              <div class="circle">🔒</div>
+              <h2>Confidence</h2>
+              <p>Trade with confidence using our expert signals.</p>
+          </div>
+          <div class="feature">
+              <div class="circle">⚙️</div>
+              <h2>Advantage</h2>
+              <p>Gain an edge with market-leading analysis tools.</p>
+          </div>
+          <div class="feature">
+              <div class="circle">📚</div>
+              <h2>Knowledge</h2>
+              <p>Stay informed with daily insights and trading strategies.</p>
+          </div>
+      </section>
+
+      <footer>
+          &copy; 2025 Market Masters Pips Pathway. All rights reserved.
+      </footer>
+  </body>
+  </html>
