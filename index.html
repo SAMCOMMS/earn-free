@@ -1,235 +1,293 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Market Masters Pips Pathway</title>
-      <style>
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-          }
-          body {
-              font-family: 'Poppins', sans-serif;
-              background: #f4f4f4;
-              color: #333;
-          }
-          header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 20px 40px;
-              background: linear-gradient(90deg, #004aad, #00bcd4);
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          }
-          .logo {
-              font-size: 30px;
-              font-weight: bold;
-              color: #fff;
-          }
-          nav ul {
-              list-style: none;
-              display: flex;
-              gap: 25px;
-          }
-          nav a {
-              color: #fff;
-              font-size: 18px;
-              text-decoration: none;
-              padding: 12px 20px;
-              border-radius: 6px;
-              transition: background-color 0.4s;
-          }
-          nav a:hover {
-              background-color: rgba(255, 255, 255, 0.3);
-          }
 
-          .menu-toggle {
-              display: none;
-          }
 
-          .menu-label {
-              display: none;
-              font-size: 28px;
-              color: #fff;
-              cursor: pointer;
-          }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Masters Pips Pathway</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-          .menu-toggle:checked + .menu-label + nav ul {
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-          }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: linear-gradient(90deg, #004aad, #00bcd4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        nav a {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            transition: background-color 0.4s;
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
 
-          .hero {
-              text-align: center;
-              padding: 100px 20px;
-              background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.8)), url('https://source.unsplash.com/1600x600/?forex,finance') no-repeat center/cover;
-              color: #fff;
-          }
-          .hero h1 {
-              font-size: 4em;
-              font-weight: 700;
-              margin-bottom: 15px;
-              text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-          }
-          .hero p {
-              font-size: 1.5em;
-              margin-bottom: 30px;
-          }
-          .hero a {
-              padding: 14px 30px;
-              background-color: #ff9800;
-              color: #fff;
-              text-decoration: none;
-              font-size: 1.2em;
-              font-weight: bold;
-              border-radius: 8px;
-              transition: background-color 0.3s;
-          }
-          .hero a:hover {
-              background-color: #e65100;
-          }
-          .features {
-              display: flex;
-              justify-content: space-around;
-              flex-wrap: wrap;
-              padding: 50px 20px;
-              background: #fafafa;
-          }
-          .feature {
-              flex: 1;
-              min-width: 300px;
-              margin: 15px;
-              padding: 20px;
-              background: #fff;
-              border-radius: 10px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-              text-align: center;
-              transition: transform 0.3s, box-shadow 0.3s;
-          }
-          .feature:hover {
-              transform: translateY(-5px);
-              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-          }
-          .feature h2 {
-              font-size: 1.8em;
-              margin-bottom: 15px;
-              color: #004aad;
-          }
-          .circle {
-              width: 100px;
-              height: 100px;
-              margin: 0 auto 20px;
-              border-radius: 50%;
-              background: linear-gradient(145deg, #e0e0e0, #c6c6c6);
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 2.5em;
-              color: #00796b;
-              box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
-          }
-          footer {
-              text-align: center;
-              padding: 20px;
-              background: #004aad;
-              color: #fff;
-          }
+        .menu-toggle {
+            display: none;
+        }
 
-          /* Responsive Design */
-          @media (max-width: 768px) {
-              .menu-label {
-                  display: block;
-              }
-              nav ul {
-                  display: none;
-                  flex-direction: column;
-                  gap: 10px;
-              }
-              .hero h1 {
-                  font-size: 2.5em;
-              }
-              .hero p {
-                  font-size: 1.2em;
-              }
-              .features {
-                  flex-direction: column;
-                  padding: 20px;
-              }
-              .feature {
-                  margin: 10px 0;
-              }
-          }
+        .menu-label {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .menu-label:hover{
+            color: black;
+        }
+        .menu-toggle:checked ~ select{
+            display: contents;
+            /* flex-direction: column; */
+            /* gap: 10px; */
+        }
 
-          @media (max-width: 480px) {
-              header {
-                  padding: 15px 20px;
-              }
-              .logo {
-                  font-size: 24px;
-              }
-              .hero {
-                  padding: 60px 10px;
-              }
-              .hero h1 {
-                  font-size: 2em;
-              }
-              .hero a {
-                  font-size: 1em;
-                  padding: 10px 20px;
-              }
-              .circle {
-                  width: 80px;
-                  height: 80px;
-                  font-size: 2em;
-              }
-          }
-      </style>
-  </head>
-  <body>
-      <header>
-          <div class="logo">Market Masters Pips Pathway</div>
-          <input type="checkbox" id="menu-toggle" class="menu-toggle">
-          <label for="menu-toggle" class="menu-label">☰</label>
-          <nav>
-              <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Signals</a></li>
-                  <li><a href="#">Charts</a></li>
-                  <li><a href="#">Our Advantage</a></li>
-                  <li><a href="#">Contact Us</a></li>
-              </ul>
-          </nav>
-      </header>
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url(The-Largest-Market-in-the-World-Why-Is-Forex-Trading-So-Popular.jpg);
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .hero a {
+            padding: 14px 30px;
+            background-color: #ff9800;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .hero a:hover {
+            background-color: #e65100;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            background: #fafafa;
+        }
+        .feature {
+            flex: 1;
+            min-width: 300px;
+            margin: 15px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .feature h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #004aad;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #e0e0e0, #c6c6c6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5em;
+            color: #00796b;
+            box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #004aad;
+            color: #fff;
+        }
+        .dropdown{
+            display: none;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-label {
+                display: none;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .features {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .feature {
+                margin: 10px 0;
+            }
+            }/* Style The Dropdown Button */
+.dropbtn {
+  background: #00bcd4;
+  border: 2px solid white;
+  color: white;
+  padding: 16px;
+  font-size: 15px;
+  cursor: pointer;
+}
 
-      <section class="hero">
-          <h1>Your Gateway to Bigger Profits</h1>
-          <p>Real-time forex trading signals, market insights, and top-notch tools.</p>
-          <a href="#">Get Started</a>
-      </section>
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-      <section class="features">
-          <div class="feature">
-              <div class="circle">🔒</div>
-              <h2>Confidence</h2>
-              <p>Trade with confidence using our expert signals.</p>
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-left: -50px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover{
+    background-color: transparent;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px 20px;
+            }
+            .logo {
+                font-size: 24px;
+            }
+            .hero {
+                padding: 60px 10px;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero a {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+            .circle {
+                width: 80px;
+                height: 80px;
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Market Masters Pips Pathway</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://wa.me/+234907283969">Signals</a></li>
+                <li><a href="#">Charts</a></li>
+                <li><a href="https://wa.me/+234907283969">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="dropdown">
+            <button class="dropbtn"><i class='bx bx-menu' id="menu"></i></button>
+            <div class="dropdown-content">
+              <a href="#">Home</a>
+              <a href="https://wa.me/+234907283969">Signals</a>
+              <a href="#">Charts</a>
+              <a href="https://wa.me/+234907283969">Contact Us</a>
+            </div>
           </div>
-          <div class="feature">
-              <div class="circle">⚙️</div>
-              <h2>Advantage</h2>
-              <p>Gain an edge with market-leading analysis tools.</p>
-          </div>
-          <div class="feature">
-              <div class="circle">📚</div>
-              <h2>Knowledge</h2>
-              <p>Stay informed with daily insights and trading strategies.</p>
-          </div>
-      </section>
+    </header>
 
-      <footer>
-          &copy; 2025 Market Masters Pips Pathway. All rights reserved.
-      </footer>
-  </body>
-  </html>
+    <section class="hero">
+        <h1>Your Gateway to Bigger Profits</h1>
+        <p>Real-time forex trading signals, market insights, and top-notch tools.</p>
+        <a href="#">Get Started</a>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <div class="circle">🔒</div>
+            <h2>Confidence</h2>
+            <p>Trade with confidence using our expert signals.</p>
+        </div>
+        <div class="feature">
+            <div class="circle">⚙️</div>
+            <h2>Advantage</h2>
+            <p>Gain an edge with market-leading analysis tools.</p>
+        </div>
+        <div class="feature">
+            <div class="circle">📚</div>
+            <h2>Knowledge</h2>
+            <p>Stay informed with daily insights and trading strategies.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Market Masters Pips Pathway. All rights reserved.
+    </footer>
+</body>
+</html>
